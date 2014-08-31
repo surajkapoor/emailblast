@@ -71,7 +71,7 @@ def email_template():
 	@tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
 	*/
 		body,#bodyTable{
-			/*@editable*/background-color:#000000;
+			/*@editable*/background-color:#ffffff;
 		}
 	/*
 	@tab Page
@@ -88,7 +88,7 @@ def email_template():
 	@style heading 1
 	*/
 		h1{
-			/*@editable*/color:#606060 !important;
+			/*@editable*/color:#000000 !important;
 			display:block;
 			/*@editable*/font-family:Helvetica;
 			/*@editable*/font-size:40px;
@@ -106,7 +106,7 @@ def email_template():
 	@style heading 2
 	*/
 		h2{
-			/*@editable*/color:#404040 !important;
+			/*@editable*/color:#030000 !important;
 			display:block;
 			/*@editable*/font-family:Helvetica;
 			/*@editable*/font-size:26px;
@@ -191,7 +191,7 @@ def email_template():
 	@tip Set the background color and borders for your email's header area.
 	*/
 		#templateHeader{
-			/*@editable*/background-color:#FFFFFF;
+			/*@editable*/background-color:#ffffff;
 			/*@editable*/border-top:0;
 			/*@editable*/border-bottom:0;
 		}
@@ -223,7 +223,7 @@ def email_template():
 	@tip Set the background color and borders for your email's body area.
 	*/
 		#templateBody{
-			/*@editable*/background-color:#000000;
+			/*@editable*/background-color:#ffffff;
 			/*@editable*/border-top:0;
 			/*@editable*/border-bottom:0;
 		}
@@ -255,7 +255,7 @@ def email_template():
 	@tip Set the background color and borders for your email's columns area.
 	*/
 		#templateColumns{
-			/*@editable*/background-color:#FFFFFF;
+			/*@editable*/background-color:#ffffff;
 			/*@editable*/border-top:0;
 			/*@editable*/border-bottom:0;
 		}
@@ -331,7 +331,7 @@ def email_template():
 	@tip Set the background color and borders for your email's footer area.
 	*/
 		#templateFooter{
-			/*@editable*/background-color:#F2F2F2;
+			/*@editable*/background-color:#ffffff;
 			/*@editable*/border-top:0;
 			/*@editable*/border-bottom:0;
 		}
@@ -646,9 +646,8 @@ def email_template():
 
 }</style></head>"""
 
-def email_template2(recommendations):
-	return """
-    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+def email_template2(first_name, recommendations):
+	return """<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
         <center>
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
                 <tr>
@@ -697,7 +696,7 @@ def email_template2(recommendations):
                     
                         
 
-                        <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/76c72915-f022-4e29-b39b-450266e29414.jpg" width="264" style="max-width:603px;" class="mcnImage">
+                        <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/19de6a14-1992-4396-823f-4e30d9c1636d.png" width="264" style="max-width:1200px;" class="mcnImage">
                         
 
                     
@@ -706,13 +705,15 @@ def email_template2(recommendations):
             </tbody></table>
             <table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="264">
                 <tbody><tr>
-                    <td valign="top" class="mcnTextContent" style="color: #000000;font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;font-size: 12px;line-height: 125%;text-align: center;">
-                        <br>
+                    <td valign="top" class="mcnTextContent">
+                        <div style="text-align: center;"><br>
 <br>
-<em><strong>OrderGroove Outdoor Terrace<br>
-75 Broad Street, New York, NY. 10014</strong></em><br>
+<span style="color:#000000"><span style="font-size:11px"><span style="font-size:14px"><strong>OrderGroove Outdoor Terrace<br>
+75 Broad Street, 23rd Floor, New York, NY. 100014</strong></span><br>
 <br>
-Wednesday, September 17th
+Tech &amp; Design: 5:00&nbsp;- 6:30<br>
+Business: 6:30 -&nbsp;8:00</span></span></div>
+
                     </td>
                 </tr>
             </tbody></table>
@@ -751,12 +752,22 @@ Wednesday, September 17th
                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer">
                     <tbody><tr>
                         
-                        <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+                        <td valign="top" class="mcnTextContent" style="padding: 9px 18px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 12px;">
                         
-                            <h2 class="null"><strong><span>Congratulations! You've got new matches</span>!</strong></h2>
-We're setting you up tonight. Based on the roles you're interested in, we've custom recommended some peeps to talk to tonight!<br>
+                            <div style="text-align: center;">
+<div style="text-align: left;">
+<hr></div>
+
+<div style="text-align: center;"><br>
+<span style="font-size:14px">Hi {first_name},&nbsp;</span><br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:14px"><span style="background-color:#FFFFFF"><strong>Not sure who to talk to tonight? </strong><br>
 <br>
-Can't make it (or too shy)? Simply find them on the TalentHack Company board and shoot them an email or LinkedIn message. They want to hear from you!
+Based on the roles you expressed&nbsp;interested in, we've recommended some people from our companies especially for you...</span></span></div>
+<br>
+&nbsp;</div>
+
                         </td>
                     </tr>
                 </tbody></table>
@@ -795,17 +806,33 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
         <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/8c05d338-c7d7-4b94-9f11-9a16ca396815.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_1[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_1[1]} src={recommendation_1[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding: 0px 9px; font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; text-align: center;" width="164">
-            <strong>{recommendation_1[0]}</strong> {recommendation_1[1]}, {recommendation_1[2]}, {recommendation_1[3]}, {recommendation_1[4]}<br>
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_1[0]}:<br>
+<br>
+<br>
+{recommendation_1[1]}<br>
+<strong>{recommendation_1[4]}</strong></span><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_1[5]}<br>
+jobs</em><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_1[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a></em></span><br>
 -----<br>
-<em>Hiring for backend development</em>
+&nbsp;</div>
+
         </td>
     </tr>
 </tbody></table>
@@ -828,19 +855,32 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
         <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/85456481-3324-4f7b-ae65-030967883157.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_2[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_2[1]} src={recommendation_2[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding: 0px 9px; font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; text-align: center;" width="164">
-            <strong>Rebecca Into the Gloss</strong><br>
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_2[0]}:</em><br>
 <br>
------<br>
 <br>
-<em>Hiring for backend development</em>
+{recommendation_2[1]}<br>
+<strong>{recommendation_2[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_2[5]}<br>
+jobs</em></span><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_2[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -860,18 +900,35 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/cbc4b516-d867-4539-8b81-e1f2d1baf7c9.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_3[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_3[1]} src={recommendation_3[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            CTO Confide
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_3[0]}:<br>
+<br>
+<br>
+{recommendation_3[1]}:<br>
+<strong>{recommendation_3[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_3[5]}<br>
+jobs</em></span><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_3[2]}: target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -898,18 +955,37 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/1586bc28-caa3-47a4-ab6a-52ba77f3a9f1.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_4[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_4[1]} src={recommendation_4[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            Henry Davis Into the Gloss
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_4[0]}:<br>
+<br>
+<br>
+{recommendation_4[1]}<br>
+<strong>{recommendation_4[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_4[5]}</em></span><br>
+jobs<br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_4[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
+<div style="text-align: center;">&nbsp;</div>
+
         </td>
     </tr>
 </tbody></table>
@@ -929,18 +1005,35 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/2c9d0a7e-f689-49f8-8ca0-dd03ff5657d5.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_5[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_5[2]} src={recommendation_5[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            Emily Weiss Into the Gloss
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_5[0]}:<br>
+<br>
+<br>
+{recommendation_5[1]}<br>
+<strong>{recommendation_5[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_5[5]}<br>
+jobs</em></span><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_5[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a></em></span><br>
+<span style="font-size:11px"><em>-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -960,18 +1053,35 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/7fde83d2-6e9f-4db9-b4f5-66d37670657f.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_6[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_6[1]} src={recommendation_6[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            Mark Candella
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_6[0]}:<br>
+<br>
+<br>
+{recommendation_6[1]}<br>
+<strong>{recommendation_6[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_6[5]}<br>
+jobs</em></span><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_6[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -998,18 +1108,36 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/09dd8674-19a0-4166-a116-3f6e099332b0.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_7[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_7[1]} src={recommendation_7[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #270000;" width="164">
-            Loryn Simpson Adaptly
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_7[0]}:<br>
+<br>
+<br>
+{recommendation_7[1]}<br>
+<strong>{recommendation_7[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_7[5]}<br>
+jobs</em></span><br>
+&nbsp;</div>
+&nbsp;
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_7[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a></em></span><br>
+-----<br>
+&nbsp;</div>
+
         </td>
     </tr>
 </tbody></table>
@@ -1029,18 +1157,34 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/d9c96037-08a3-4bcb-8ac3-5dfd45058ad8.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_8[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_8[1]} src={recommendation_8[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            Co-founder Confide
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;"><span style="font-size:11px">From {recommendation_8[0]}:<br>
+<br>
+<br>
+{recommendation_8[1]}</span><br>
+<strong>{recommendation_8[4]}</strong><br>
+<br>
+<em>Hiring for<br>
+{recommendation_8[5]}<br>
+jobs</em></span><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_8[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -1060,18 +1204,35 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
 
 <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionBottomContent" width="false">
     <tbody><tr>
-        <td class="mcnCaptionBottomImageContent" align="left" valign="top" style="padding:0 9px 9px 9px;">
+        <td class="mcnCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
         
             
-
-            <img alt="" src="https://gallery.mailchimp.com/150b63e56424afcb3b923306b/images/67a33352-282a-492b-984f-7cbff8115a2c.jpg" width="100" style="max-width:100px;" class="mcnImage">
+            <a href={recommendation_9[2]} title="" class="" target="_blank">
             
+
+            <img alt={recommendation_9[1]} src={recommendation_9[3]} width="100" style="max-width:100px;" class="mcnImage">
+            </a>
         
         </td>
     </tr>
     <tr>
-        <td class="mcnTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
-            Thibault from Knozen
+        <td class="mcnTextContent" valign="top" style="padding: 0px 9px;color: #000000;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size: 11px;font-style: normal;line-height: 100%;text-align: center;" width="164">
+            <div style="text-align: center;">From {recommendation_9[0]}:<br>
+<br>
+<br>
+{recommendation_9[1]}<br>
+<strong>{recommendation_9[4]}</strong><br>
+<br>
+<br>
+<em>Hiring for<br>
+{recommendation_9[5]}<br>
+jobs</em><br>
+<br>
+&nbsp;</div>
+
+<div style="text-align: center;"><span style="font-size:11px"><em><a href={recommendation_9[2]} target="_blank">View&nbsp;My&nbsp;LinkedIn</a><br>
+-----</em></span></div>
+
         </td>
     </tr>
 </tbody></table>
@@ -1103,7 +1264,42 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
                                                     <tr>
-                                                        <td valign="top" class="footerContainer" style="padding-top:10px; padding-bottom:10px;"></td>
+                                                        <td valign="top" class="footerContainer" style="padding-top:10px; padding-bottom:10px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock">
+    <tbody class="mcnButtonBlockOuter">
+        <tr>
+            <td style="padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top" align="center" class="mcnButtonBlockInner">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border: 2px solid #000000;border-top-left-radius: 5px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;background-color: #BBEBDD;">
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 16px;">
+                                <a class="mcnButton " title="COMPANY PROFILES" href="http://" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #000000;">COMPANY PROFILES</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner">
+                
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer">
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" style="padding: 9px 18px;color: #FFFFFF;">
+                        
+                            <div style="text-align: center;"><span style="color:#000000"><span style="line-height:20.7999992370605px">Can't make it? Check out the&nbsp;TalentHack Company board and email or LinkedIn message anyone you are interested in working for. They want to hear from you!</span></span></div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -1119,4 +1315,5 @@ Can't make it (or too shy)? Simply find them on the TalentHack Company board and
             </table>
         </center>
     </body>
-</html>""".format(**recommendations)
+</html>
+	""".format(first_name=first_name, **recommendations)
